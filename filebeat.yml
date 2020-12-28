@@ -1,0 +1,15 @@
+filebeat.config.inputs:
+  enabled: true
+  path: /config/inputs/*.yml
+
+filebeat.config.modules:
+  enabled: true
+  path: /config/modules/*.yml  
+
+output.elasticsearch:
+  hosts: '${ELASTICSEARCH_HOSTS:elasticsearch-master:9200}'
+
+logging.level: info
+logging.to_files: false
+logging.to_stderr: true
+http.enabled: true
